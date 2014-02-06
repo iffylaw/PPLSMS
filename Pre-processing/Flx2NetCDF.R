@@ -28,7 +28,9 @@ nc = read.csv(ncfile, header=TRUE, sep="")
 attach(nc)
 
 Variable_names <- names(nc)
-Variable_units <- nc[1,]
+Variable_unit <- nc[1,]
+# Convert data.frame columns from factors to characters
+Variable_units <- data.frame(lapply(Variable_unit, as.character), stringsAsFactors=FALSE) 
 Variable_length <- length(nc[,1])
 
 # Create NetCDF file
@@ -60,7 +62,7 @@ for (V in 3:length(Variable_names)){
     var.def.nc(netcdf.from.fluxnet, Variable_names[V], "NC_DOUBLE", c("lat","lon","time"))
     
     #att.put.nc(netcdf.from.fluxnet, "NEE", "long_name", "NC_CHAR", "gapfilled Net Ecosystem Exchange")
-    #att.put.nc(netcdf.from.fluxnet, Variable_names[V], "units", "NC_CHAR", Variable_units[V])
+    att.put.nc(netcdf.from.fluxnet, Variable_names[V], "units", "NC_CHAR", Variable_units[1, V])
     
     att.put.nc(netcdf.from.fluxnet, Variable_names[V], "missing_value", "NC_DOUBLE", -9999.)
     
