@@ -1,0 +1,116 @@
+#!/usr/bin/env Rscript
+# Date: 09/02/2014
+# Written by Lihui Luo 
+# E-mail: luolh@lzb.ac.cn
+# AmeriFlux website http://ameriflux.lbl.gov/Pages/default.aspx
+# Data product come from Level 4 - Gap-filled & Adjusted Data Files with GEP & Re Estimates
+
+rm(list = ls())     # clear objects  
+graphics.off()      # close graphics windows   
+
+# Set parameters
+Args <- commandArgs(trailingOnly=TRUE);
+if(length(Args) != 1) {
+  message("AmeriFlux2NetCDF.R requires site name as input. Terminating");
+  quit()
+}
+
+require(XML)
+require(ncdf)
+require(RNetCDF)
+
+site_name <- as.character(Args[1])
+#start_year <- as.numeric(Args[2])
+#end_year  <- as.numeric(Args[3])
+work_dir <- try(system("pwd",intern=TRUE))
+setwd(work_dir)
+
+siteInfoURL <- "http://ameriflux.lbl.gov/AmeriFluxSites/Pages/Site-Map.aspx"
+tableID <- "ctl00_ctl33_g_a5f0c0fe_dfe6_435f_8d36_acb194e8c4b8_ctl00_sitesView"
+siteInfo <- readHTMLTable(siteInfoURL, header=TRUE, as.data.frame = TRUE)
+names(siteInfo)
+
+SITE_ID <- siteInfo[[1]][1]  
+SITE_NAME <- siteInfo[[1]][2]	
+URL_AMERIFLUX <- siteInfo[[1]][3]
+TOWER_BEGAN <- siteInfo[[1]][4]	
+TOWER_END <- siteInfo[[1]][5]	
+LOCATION_LAT <- siteInfo[[1]][6]	
+LOCATION_LONG <- siteInfo[[1]][7]	
+LOCATION_ELEV <- siteInfo[[1]][8]	
+IGBP <- siteInfo[[1]][9]	
+CLIMATE_KOEPPEN <- siteInfo[[1]][10]	
+MAT <- siteInfo[[1]][11]	
+MAP <- siteInfo[[1]][12]
+
+# write site info table
+allSiteInfo <- data.frame(SITE_ID,  SITE_NAME,	TOWER_BEGAN,	TOWER_END,	LOCATION_LAT,	LOCATION_LONG,	LOCATION_ELEV,	IGBP,	CLIMATE_KOEPPEN,	MAT,	MAP)
+write.csv(allSiteInfo, file="AmeriFluxSiteInfo.csv")
+
+start_year <- as.numeric(siteInfo[[1]][4][siteInfo[[1]][1]==site_name])  
+end_year <- as.numeric(siteInfo[[1]][5][siteInfo[[1]][1]==site_name])
+longitude <- as.numeric(siteInfo[[1]][7][siteInfo[[1]][1]==site_name])
+latitude <- as.numeric(siteInfo[[1]][8][siteInfo[[1]][1]==site_name])
+
+# combine the multiple files of hourly with one header
+listFiles <- list.files(pattern=".*_h_.*\\.txt$", recursive=TRUE)
+listFilesData <- do.call("rbind", lapply(listFiles, read.csv, header = TRUE))
+
+site_filename <- paste(site_name,"-", start_year,"-", end_year, ".csv", sep="")
+write.csv(listFilesData, file=site_filename)
+
+# Read FLUXNET file
+nc = read.csv(site_filename, header=TRUE, sep=",")
+attach(nc)
+
+Variable_names <- names(nc)
+#Variable_unit <- nc[1,]
+# Convert data.frame columns from factors to characters
+#Variable_units <- data.frame(lapply(Variable_unit, as.character), stringsAsFactors=FALSE) 
+Variable_length <- length(nc[,1])
+
+# Create NetCDF file
+netcdf.from.fluxnet <- create.nc(paste(site_filename, ".nc", sep=""))
+
+# dimensions
+dim.def.nc(netcdf.from.fluxnet, "lon", 1)
+dim.def.nc(netcdf.from.fluxnet, "lat", 1)
+dim.def.nc(netcdf.from.fluxnet, "time", unlim=TRUE)
+
+# variables
+var.def.nc(netcdf.from.fluxnet, "lon", "NC_DOUBLE", "lon")
+var.def.nc(netcdf.from.fluxnet, "lat", "NC_DOUBLE", "lat")
+var.def.nc(netcdf.from.fluxnet, "time", "NC_DOUBLE", "time")
+
+# loop for variables define (var & att)
+# First & Sencond Variables are Day & Hour, time varibale will replace
+att.put.nc(netcdf.from.fluxnet, "time", "long_name", "NC_FLOAT", "time")
+att.put.nc(netcdf.from.fluxnet, "time", "units", "NC_FLOAT", "hour")
+
+# define lat & lon
+var.put.nc(netcdf.from.fluxnet, "lon", longitude)
+var.put.nc(netcdf.from.fluxnet, "lat", latitude)
+var.put.nc(netcdf.from.fluxnet, "time", as.numeric(as.character(Hour[1:Variable_length])), 1, Variable_length)
+
+for (V in 5:length(Variable_names)){
+  
+  #dim.def.nc(netcdf.from.fluxnet, Variable_names[V], Variable_length-1)
+  var.def.nc(netcdf.from.fluxnet, Variable_names[V], "NC_DOUBLE", c("lat","lon","time"))
+  
+  #att.put.nc(netcdf.from.fluxnet, "NEE", "long_name", "NC_CHAR", "gapfilled Net Ecosystem Exchange")
+  #att.put.nc(netcdf.from.fluxnet, Variable_names[V], "units", "NC_CHAR", Variable_units[1, V])
+  
+  att.put.nc(netcdf.from.fluxnet, Variable_names[V], "missing_value", "NC_DOUBLE", -9999.)
+  
+  # Write data out to NetCDF file
+  var.put.nc(netcdf.from.fluxnet, Variable_names[V], as.numeric(as.character(nc[,V][1:Variable_length])), start=c(1,1,1), count=c(1,1,Variable_length))
+  
+}
+
+# Global attribution
+att.put.nc(netcdf.from.fluxnet, "NC_GLOBAL", "title", "NC_CHAR", "Data from FLUXNET")
+att.put.nc(netcdf.from.fluxnet, "NC_GLOBAL", "author", "NC_CHAR", "Lihui Luo email:luolh@lzb.ac.cn")
+
+# close the netcdf file
+sync.nc(netcdf.from.fluxnet)
+close.nc(netcdf.from.fluxnet)
