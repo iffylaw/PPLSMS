@@ -1,6 +1,9 @@
 #!/usr/bin/env Rscript
 # Date: 01/02/2014
-# Written by Lihui Luo luolh@lzb.ac.cn
+# Written by Lihui Luo 
+# E-mail: luolh@lzb.ac.cn
+# FLUXNET data from ftp://daac.ornl.gov/data/fluxnet
+# Convert FLUXNET data to NetCDF format files
 
 rm(list = ls())     # clear objects  
 graphics.off()      # close graphics windows   
