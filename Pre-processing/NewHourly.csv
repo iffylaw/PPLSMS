@@ -1,0 +1,104 @@
+Idx,Text,Units,Description,Cube datumtype,Cube extended Datumtype,Cube Offset
+1,Year,integer,Year,,,
+2,DoY,integer,Day Of Year,,,
+3,Time,-,Time of Day,,,
+4,DTIME,-,Julian Date,,,
+5,NEE_f,umolCO2 m-2 s-1,Net Ecosystem Exchange,NEE,,(none)
+6,NEE_f_delta,umolCO2 m-2 s-1,Net ecosystem exchange (ANN-MDS delta),NEE,_delta,(none)
+7,GPP_f,umolCO2 m-2 s-1,Gross ecosystem production,GPP,,(none)
+8,GPP_f_delta,umolCO2 m-2 s-1,Gross ecosystem production  (ANN-MDS delta),GPP,_delta,(none)
+9,Reco,umolCO2 m-2 s-1,Ecosystem Respiration calculated after Reichstein et al. (2005),Reco,,(none)
+10,NEE_GPP_qc,-,see below,,,
+11,NEE_GPP_qcOK,-,see below,,,
+12,LE_f,W m-2,Latent heat flux,LE,,(none)
+13,LE_fqc,-,see below,,,
+14,LE_fqcOK,-,see below,,,
+15,H_f,W m-2,Sensible heat flux,H,,(none)
+16,H_fqc,-,see below,,,
+17,H_fqcOK,-,see below,,,
+18,G_f,W m-2,Soil heat flux,G,,(none)
+19,G_fqc,-,see below,,,
+20,G_fqcOK,-,see below,,,
+21,Ta_f,¡ãC,Air temperature,Ta,,(none)
+22,Ta_fqc,-,see below,,,
+23,Ta_fqcOK,-,see below,,,
+24,Ts1_f,¡ãC,Soil temperature (upper layer),Ts,,upper
+25,Ts1_fqc,-,see below,,,
+26,Ts1_fqcOK,-,see below,,,
+27,Ts2_f,¡ãC,Soil temperature (lower layer),Ts,,lower
+28,Ts2_fqc,-,see below,,,
+29,Ts2_fqcOK,-,see below,,,
+30,VPD_f,hPa,Vapor pressure deficit,VPD,,(none)
+31,VPD_fqc,-,see below,,,
+32,VPD_fqcOK,-,see below,,,
+33,Precip_f,mm,Precipitation,Precip,,(none)
+34,Precip_fqc,-,see below,,,
+35,Precip_fqcOK,-,see below,,,
+36,SWC1_f,%,Soil water content (upper layer),SWC,,upper
+37,SWC1_fqc,-,see below,,,
+38,SWC1_fqcOK,-,see below,,,
+39,SWC2_f,%,Soil water content (lower layer),SWC,,lower
+40,SWC2_fqc,-,see below,,,
+41,SWC2_fqcOK,-,see below,,,
+42,WS_f,m s-1,Wind speed,WS,,(none)
+43,WS_fqc,-,see below,,,
+44,WS_fqcOK,-,see below,,,
+45,Rg_f,W m-2,Global Radiation,Rg,,(none)
+46,Rg_fqc,-,see below,,,
+47,Rg_fqcOK,-,see below,,,
+48,PPFD_f,umol m-2 s-1,Photosynthetic Photon Flux Density,PPFD,,(none)
+49,PPFD_fqc,-,see below,,,
+50,PPFD_fqcOK,-,see below,,,
+51,Rn_f,W m-2,Net radiation,Rn,,(none)
+52,Rn_fqc,-,see below,,,
+53,Rn_fqcOK,-,see below,,,
+54,Rg_pot,W m-2,Potential radiation (if atmosphere a vacuum),Rpot,,(none)
+55,Rd,W m-2,Diffuse Radiation,Rd,,(none)
+56,Rr,W m-2,Reflected radiation,Rr,,(none)
+57,PPFDbc,umol m-2 s-1,Photosynthetic Photon Flux Density  (below canopy),PPFDbc,,(none)
+58,PPFDd,umol m-2 s-1,Photosynthetic Photon Flux Density  (diffuse),PPFDd,,(none)
+59,PPFDr,umol m-2 s-1,Photosynthetic Photon Flux Density  (reflected),PPFDr,,(none)
+60,FAPAR,%,Fraction of Absorbed Photosynthetically Active Radiation ,FAPAR,,(none)
+61,LWin,W m-2,Long wave incoming radiation,LWin,,(none)
+62,LWout,W m-2,Long wave outgoing radiation,LWout,,(none)
+63,SWin,W m-2,Short wave incoming radiation,SWin,,(none)
+64,SWout,W m-2,Short wave outgoing radiation,SWout,,(none)
+65,WD,degree,Wind direction,WD,,(none)
+66,ustar,m s-1,Friction velocity,ustar,,(none)
+67,ZL,,Atmosphere stability parameter,ZL,,(none)
+68,Rh,%,Relative humidity,Rh,,(none)
+69,CO2,umol mol-1,Carbon dioxide concentration,CO2,,(none)
+70,H2O,mmol mol-1,Water vapour concentration,H2O,,(none)
+71,H2Ostor1,mm,"Water storage in upper layer according to simple unspecific two-layer bucket model: 40, 110 mm WHC",H2Ostor,,upper
+72,H2Ostor2,mm,"Water storage in lower layer according to simple unspecific two-layer bucket model:40, 110 mm WHC",H2Ostor,,lower
+73,NEE_f_unc,umolCO2 m-2 s-1,"Net ecosystem exchange fill only; can be interpreted as an approx. expected value, where random error adds to get the real flux",NEE,_unc,(none)
+74,NEE_fqc_unc,-,see below,,,
+75,NEE_fqcOK_unc,-,see below,,,
+76,LE_f_unc,W m-2,Latent heat flux fill only; see NEE_f_unc,LE,_unc,(none)
+77,LE_fqc_unc,-,see below,,,
+78,LE_fqcOK_unc,-,see below,,,
+79,H_f_unc,W m-2,Sensible head flux fill only; see NEE_f_unc,H,_unc,(none)
+80,H_fqc_unc,-,see below,,,
+81,H_fqcOK_unc,-,see below,,,
+82,Reco_E0_100,umolCO2 m-2 s-1,Ecosystem respiration estimated after Reichstein et al. (2005) assuming E0=100 as temperature sensitivity,Reco,_E0_100,(none)
+83,Reco_E0_200,umolCO2 m-2 s-1,Ecosystem respiration estimated after Reichstein et al. (2005) assuming E0=200 as temperature sensitivity,Reco,_E0_200,(none)
+84,Reco_E0_300,umolCO2 m-2 s-1,Ecosystem respiration estimated after Reichstein et al. (2005) assuming E0=300 as temperature sensitivity,Reco,_E0_300,(none)
+85,wbal_clim,mm,Water balance (climatic) (Precip-Epot),wbal,_clim,(none)
+86,wbal_act,mm,Water balance (actual),wbal,_act,(none)
+87,wdef_cum,mm,"cumulative water deficit, starts at 0 each year",wdef,_cum,(none)
+88,Epot_viaLE_H,mm h-1,Potential evapotranspiration after Penman: Rn-G approximated by LE+H,Epot,_viaLE_H,(none)
+89,EpotPT_viaLE_H,mm h-1,Potential evapotranspiration after Priestley-Taylor (Rn-G approximated by H+LE),Epot,_PTviaLE_H,(none)
+90,Epot_viaRg,mm h-1,Potential evapotranspiration after Penman: Rn-G approximated by 0.85*Rg,Epot,_viaRg,(none)
+91,Epot_viaRn,mm h-1,Potential evapotranspiration after Penman: Rn-G used as measured,Epot,_viaRn,(none)
+92,Epot_f,mm h-1,"Potential evapotranspiration after Penman according to priority: take Epot_viaRn, if not available, take Epot_viaLE_H, else Epot_viaRg ",Epot,,(none)
+93,Epot_flag,-,see below,,,
+94,gsurf_viaRg,mmol m-2 s-1,surface conductance via inversion of Penman-Monteith: Rn-G approximated by 0.85*Rg,gsurf,_viaRg,(none)
+95,gsurf_viaRn,mmol m-2 s-1,surface conductance via inversion of Penman-Monteith: Rn-G used as measured,gsurf,_viaRn,(none)
+96,gsurf_viaLE_H,mmol m-2 s-1,surface conductance via inversion of Penman-Monteith: Rn-G approximated by H+LE,gsurf,_viaLE_H,(none)
+97,gsurf_f,mmol m-2 s-1,"canopy conductance via inversion of Penman-Monteith,  according to priority: take gsurf_viaRn, if not available, take gsurf_viaLE_H, else gsurf_viaRg; filtered on hourly basis: take only if Rg > 150 W m-2 and gsurf_f within [0,2000 mmol m-2 s-1]",gsurf,,(none)
+98,gsurf_flag,-,see below,,,
+99,Drain,mm,"Water drainage according to simple unspecific two-layer bucket model: 40, 110mm WHC",Drain,,(none)
+100,EpotPT_viaRn,mm h-1,Potential evapotranspiration after Priestley-Taylor (Rn-G as measured),Epot,_PT_viaRn,(none)
+101,H2Ostor1_hWHC,mm,"Water storage in upper layer according to simple unspecific two-layer bucket model: 40, 260 mm WHC",H2Ostor,_hWHC,upper
+102,H2Ostor2_hWHC,mm,"Water storage in lower layer according to simple unspecific two-layer bucket model: 40, 260 mm WHC",H2Ostor,_hWHC,lower
+103,Drain_hWHC,mm,"Water drainage according to simple unspecific two-layer bucket model: 40, 260mm WHC",Drain,_hWHC,(none)
