@@ -28,6 +28,8 @@ setwd(work_dir)
 
 # include the script that get the AmeriFlux site infomation
 source("AmeriFluxSiteInfo.R")
+# include the script that get the variable units of AmeriFlux site
+source("AmeriFluxVarUnits.R")
 
 start_year <- as.numeric(siteInfo[[1]][4][siteInfo[[1]][1]==site_name])  
 end_year <- as.numeric(siteInfo[[1]][5][siteInfo[[1]][1]==site_name])
@@ -80,7 +82,7 @@ for (V in 5:length(Variable_names)){
   var.def.nc(netcdf.from.fluxnet, Variable_names[V], "NC_DOUBLE", c("lat","lon","time"))
   
   #att.put.nc(netcdf.from.fluxnet, "NEE", "long_name", "NC_CHAR", "gapfilled Net Ecosystem Exchange")
-  #att.put.nc(netcdf.from.fluxnet, Variable_names[V], "units", "NC_CHAR", Variable_units[1, V])
+  att.put.nc(netcdf.from.fluxnet, Variable_names[V], "units", "NC_CHAR", AmeriVarUnit[AmeriVarName==Variable_names[V]])
   
   att.put.nc(netcdf.from.fluxnet, Variable_names[V], "missing_value", "NC_DOUBLE", -9999.)
   
