@@ -21,8 +21,6 @@ require(ncdf)
 require(RNetCDF)
 
 site_name <- as.character(Args[1])
-#start_year <- as.numeric(Args[2])
-#end_year  <- as.numeric(Args[3])
 work_dir <- try(system("pwd",intern=TRUE))
 setwd(work_dir)
 
@@ -75,15 +73,20 @@ var.put.nc(netcdf.from.fluxnet, "time", as.numeric(as.character(Hour[1:Variable_
 
 for (V in 6:length(Variable_names)){
   
-  #dim.def.nc(netcdf.from.fluxnet, Variable_names[V], Variable_length-1)
+  #define dimensions
   var.def.nc(netcdf.from.fluxnet, Variable_names[V], "NC_DOUBLE", c("lat","lon","time"))
   
-  #att.put.nc(netcdf.from.fluxnet, "NEE", "long_name", "NC_CHAR", "gapfilled Net Ecosystem Exchange")
+  #define long name of variables
+  varDesc <- levels(droplevels(AmeriVarDesc[AmeriVarName==Variable_names[V]]))
+  varDesc[is.na(varDesc)] <- as.character("--")
+  att.put.nc(netcdf.from.fluxnet, Variable_names[V], "long_name", "NC_CHAR", varDesc)
+  
+  #define unit of variables
   varUnit <- levels(droplevels(AmeriVarUnit[AmeriVarName==Variable_names[V]]))
   varUnit[is.na(varUnit)] <- as.character("--")
-  print(varUnit)
   att.put.nc(netcdf.from.fluxnet, Variable_names[V], "units", "NC_CHAR", varUnit)
   
+  # define missing value
   att.put.nc(netcdf.from.fluxnet, Variable_names[V], "missing_value", "NC_DOUBLE", -9999.)
   
   # Write data out to NetCDF file
