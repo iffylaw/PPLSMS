@@ -1,0 +1,35 @@
+VarName,VarDesc,VarUnit
+Month,from 1 to 12,--
+Day,day of the month,--
+Hour,"from 0 to 23.5, indicates the end of the half hour of measurement",--
+DoY,decimal day of the year,--
+Rg_f,global radiation filled,W m-2
+Rg_fqc,"global radiation quality flags: 0 = original, 1 = category A (most reliable), 2 = category B (medium), 3 = category C (least reliable)",--
+Ta_f,air temperature filled,¡æ
+Ta_fqc,"air temperature quality flags: 0 = original, 1 = category A (most reliable), 2 = category B (medium), 3 = category C (least reliable)",--
+VPD_f,vapour pressure deficit,hPa
+VPD_fqc,"vapour pressure deficit quality flags: 0 = original, 1 = category A (most reliable), 2 = category B (medium), 3 = category C (least reliable)",--
+Ts_f,soil temperature filled,¡æ
+Ts_fqc,"soil temperature quality flags: 0 = original, 1 = category A (most reliable), 2 = category B (medium), 3 = category C (least reliable)",--
+Precip,precipitation,mm
+SWC,soil water content,%vol
+H_f,sensible heat flux filled,W m-2
+H_fqc,"sensible heat flux quality flags: 0 = original, 1 = category A (most reliable), 2 = category B (medium), 3 = category C (least reliable)",--
+LE_f,latent heat flux filled,W m-2
+LE_fqc,"latent heat flux quality flags: 0 = original, 1 = category A (most reliable), 2 = category B (medium), 3 = category C (least reliable)",--
+qf_NEE_st,fluxes quality flags as defined in the Level3 product,--
+qf_NEE_or,fluxes quality flags as defined in the Level3 product,--
+Reco_st,Estimated ecosystem respiration according to the short-term temperature response of night-time fluxes based on NEE_st,umolCO2 m-2 s-1
+Reco_or,Estimated ecosystem respiration according to the short-term temperature response of night-time fluxes based on NEE_or,umolCO2 m-2 s-1
+NEE_st_fMDS,NEE_st filled using the Marginal Distribution Sampling method,umolCO2 m-2 s-1
+NEE_st_fMDSqc,"NEE_st_fMDS quality flags: 0 = original, 1 = category A (most reliable), 2 = category B (medium), 3 = category C (least reliable)",--
+GPP_st_MDS,Gross Primary Production calculated as GPP_st_MDS = Reco_st - NEE_st_MDS,umolCO2 m-2 s-1
+NEE_or_fMDS,NEE_or filled using the Marginal Distribution Sampling method,umolCO2 m-2 s-1
+NEE_or_fMDSqc,"NEE_or_fMDS quality flags: 0 = original, 1 = category A (most reliable), 2 = category B (medium), 3 = category C (least reliable)",--
+GPP_or_MDS,Gross Primary Production calculated as GPP_or_MDS = Reco_or - NEE_or_MDS,umolCO2 m-2 s-1
+NEE_st_fANN,NEE_st filled using the Artificial Neural Network method,umolCO2 m-2 s-1
+NEE_st_fANNqc,"NEE_st_fANN quality flags: 0 = original, 1 = filled using original meteorological inputs or filled with qc=1, 2 = filled using filled meteorological inputs with qc=2 or 3, 3 = not filled using ANN due to one or more input missed but filled with the MDS method",--
+GPP_st_ANN,Gross Primary Production calculated as GPP_st_ ANN = Reco_st - NEE_st_ ANN,umolCO2 m-2 s-1
+NEE_or_fANN,NEE_or filled using the Artificial Neural Network method,umolCO2 m-2 s-1
+NEE_or_fANNqc,"NEE_or_fANN quality flags: 0 = original, 1 = filled using original meteorological inputs or filled with qc=1, 2 = filled using filled meteorological inputs with qc=2 or 3, 3 = not filled using ANN due to one or more input missed but filled with the MDS method",--
+GPP_or_ANN,Gross Primary Production calculated as GPP_or_ ANN = Reco_or - NEE_or_ ANN,umolCO2 m-2 s-1
