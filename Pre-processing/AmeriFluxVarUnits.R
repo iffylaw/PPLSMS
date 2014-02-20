@@ -4,7 +4,7 @@
 # E-mail: luolh@lzb.ac.cn
 # FLUXNET Variable Units website http://www.fluxdata.org/DataInfo/default.aspx
 # LEVEL 4 VARIABLE DESCRIPTION (Half hourly dataset variables description)
-# website ftp://cdiac.ornl.gov/pub/ameriflux/data/Level4/L4_README.txt ()
+# download website ftp://cdiac.ornl.gov/pub/ameriflux/data/Level4/L4_README.txt (halfhourly)
 # Get the AmeriFlux variable units
 
 AmeriVarInfo <- read.csv("AmeriFluxVar.csv", header=TRUE)
