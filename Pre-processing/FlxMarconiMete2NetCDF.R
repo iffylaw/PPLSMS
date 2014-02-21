@@ -1,40 +1,37 @@
 #!/usr/bin/env Rscript
-# Date: 09/02/2014
+# Date: 01/02/2014
 # Written by Lihui Luo 
 # E-mail: luolh@lzb.ac.cn
-# AmeriFlux website http://ameriflux.lbl.gov/Pages/default.aspx
-# download website ftp://cdiac.ornl.gov/pub/ameriflux/data
-# Data product come from Level 4 - Gap-filled & Adjusted Data Files with GEP & Re Estimates
-# Convert AmeriFlux data to NetCDF format files
+# download website FLUXNET data from ftp://daac.ornl.gov/data/fluxnet/gap_filled_marconi/data/Meteo/Halfhourly
+# Convert FLUXNET Meteo Halfhourly data to NetCDF format files
 
 rm(list = ls())     # clear objects  
 graphics.off()      # close graphics windows   
 
 # Set parameters
 Args <- commandArgs(trailingOnly=TRUE);
-if(length(Args) != 1) {
-  message("AmeriFlux2NetCDF.R requires site name as input. Terminating");
+if(length(Args) != 3) {
+  message("FlxMete2NetCDF.R requires site code (2 letter), lon & lat as input, e.g. AB97_hh.met is for AB. Terminating");
   quit()
 }
 
-require(XML)
+# Input parameter
+siteCode <- as.character(Args[1])
+latitude <- as.numeric(Args[2])
+longitude <- as.numeric(Args[3])
+work_dir <- try(system("pwd",intern=TRUE))
+
+setwd(work_dir)
+
 require(ncdf)
 require(RNetCDF)
 
-site_name <- as.character(Args[1])
-#site_name <- "BR-Sa3"
-work_dir <- try(system("pwd",intern=TRUE))
-setwd(work_dir)
+# include the script that get the FLUXNET gap_filled_marconi data
+source("FlxMarconiSiteInfo.R")
 
-# include the script that get the AmeriFlux site infomation
-source("AmeriFluxSiteInfo.R")
-# include the script that get the variable units of AmeriFlux site
-source("AmeriFluxVarUnits.R")
-
-start_year <- as.numeric(siteInfo[[1]][4][siteInfo[[1]][1]==site_name])  
-end_year <- as.numeric(siteInfo[[1]][5][siteInfo[[1]][1]==site_name])
-longitude <- as.numeric(siteInfo[[1]][7][siteInfo[[1]][1]==site_name])
-latitude <- as.numeric(siteInfo[[1]][8][siteInfo[[1]][1]==site_name])
+start_year <- as.numeric(substr(siteCodeInfo[6][siteCodeInfo[1]==siteCode], 1, 4))
+end_year <- as.numeric(substr(siteCodeInfo[6][siteCodeInfo[1]==siteCode], 6, 9))
+end_year[is.na(end_year)] <- start_year
 
 #Time processing from start year %Y%m%d.%f, 20010101.0000000
 # Days as time interval, one day has 48 halfhour
@@ -47,21 +44,29 @@ for (D in 1:length(Obs_date)){
 Obs_date_time <- as.vector(Obs_date_time)
 
 # combine the multiple files of hourly with one header
-listFiles <- list.files(path=site_name, pattern=".*_h_.*\\.txt$", recursive=TRUE)
-listFilesData <- do.call("rbind", lapply(paste(site_name,"/",listFiles, sep=""), read.csv, header = TRUE))
+listFiles <- list.files(pattern=paste(siteCode, ".*\\.met$", sep=""), recursive=TRUE)
+if (length(listFiles)>1){
+  listFilesData <- do.call("rbind", lapply(paste(site_name,"/",listFiles, sep=""), read.csv, header = TRUE, skip_second))
+}
+else{
+  listFilesData <- read.csv(listFiles, header=TRUE, skip_second)
+}
 
-site_filename <- paste(site_name,"-", start_year,"-", end_year, ".csv", sep="")
-write.csv(listFilesData, file=site_filename)
+site_filename <- paste(siteCode, ".csv", sep="")
+write.csv(listFilesData, file=site_filename)site
 
 # Read FLUXNET file
 nc = read.csv(site_filename, header=TRUE, sep=",")
 attach(nc)
 
 Variable_names <- names(nc)
+Variable_unit <- nc[1,]
+# Convert data.frame columns from factors to characters
+Variable_units <- data.frame(lapply(Variable_unit, as.character), stringsAsFactors=FALSE) 
 Variable_length <- length(nc[,1])
 
 # Create NetCDF file
-netcdf.from.fluxnet <- create.nc(paste(site_name,"-", start_year,"-", end_year, "_obs_halfhourly.nc", sep=""))
+netcdf.from.fluxnet <- create.nc(paste(siteCode,"-", start_year,"-", end_year, "_obs_halfhourly.nc", sep=""))
 
 # dimensions
 dim.def.nc(netcdf.from.fluxnet, "lon", 1)
@@ -87,27 +92,27 @@ var.put.nc(netcdf.from.fluxnet, "lon", longitude)
 var.put.nc(netcdf.from.fluxnet, "lat", latitude)
 var.put.nc(netcdf.from.fluxnet, "time", as.numeric(as.character(Obs_date_time)), 1, Variable_length)
 
-for (V in 6:length(Variable_names)){
-  
+for (V in 3:length(Variable_names)){
+    
   #define dimensions
   var.def.nc(netcdf.from.fluxnet, Variable_names[V], "NC_DOUBLE", c("lat","lon","time"))
   
   #define long name of variables
-  varDesc <- levels(droplevels(AmeriVarDesc[AmeriVarName==Variable_names[V]]))
+  varDesc <- levels(droplevels(MeteHalfhVar[3][siteCodeInfo[1]==Variable_names[V]]))
   varDesc[is.na(varDesc)] <- as.character("--")
   att.put.nc(netcdf.from.fluxnet, Variable_names[V], "long_name", "NC_CHAR", varDesc)
   
   #define unit of variables
-  varUnit <- levels(droplevels(AmeriVarUnit[AmeriVarName==Variable_names[V]]))
+  varUnit <- levels(droplevels(MeteHalfhVar[2][siteCodeInfo[1]==Variable_names[V]]))
   varUnit[is.na(varUnit)] <- as.character("--")
   att.put.nc(netcdf.from.fluxnet, Variable_names[V], "units", "NC_CHAR", varUnit)
-  
+    
   # define missing value
   att.put.nc(netcdf.from.fluxnet, Variable_names[V], "missing_value", "NC_DOUBLE", -9999.)
-  
+    
   # Write data out to NetCDF file
-  var.put.nc(netcdf.from.fluxnet, Variable_names[V], as.numeric(as.character(nc[,V][1:Variable_length])), start=c(1,1,1), count=c(1,1,Variable_length))
-  
+  var.put.nc(netcdf.from.fluxnet, Variable_names[V], as.numeric(as.character(nc[,V][2:Variable_length])), start=c(1,1,1), count=c(1,1,Variable_length-1))
+    
 }
 
 # Global attribution
@@ -117,3 +122,4 @@ att.put.nc(netcdf.from.fluxnet, "NC_GLOBAL", "author", "NC_CHAR", "Lihui Luo ema
 # close the netcdf file
 sync.nc(netcdf.from.fluxnet)
 close.nc(netcdf.from.fluxnet)
+

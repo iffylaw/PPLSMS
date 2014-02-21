@@ -14,3 +14,6 @@ VarDesc <- VarInfo[,4]
 VarCubeDatum <- VarInfo[,5]
 VarCubeExtDatum <- VarInfo[,6]
 VarCubeOffset <- VarInfo[,7]
+
+# write site info table
+VarUnitInfo <- data.frame(VarName, VarUnit, VarDesc, VarCubeDatum, VarCubeOffset)
