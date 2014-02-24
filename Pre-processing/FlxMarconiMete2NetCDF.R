@@ -11,7 +11,7 @@ graphics.off()      # close graphics windows
 # Set parameters
 Args <- commandArgs(trailingOnly=TRUE);
 if(length(Args) != 3) {
-  message("FlxMete2NetCDF.R requires site code (2 letter), lon & lat as input, e.g. AB97_hh.met is for AB. Terminating");
+  message("FlxMete2NetCDF.R requires site code (2 or 3 letter), lon & lat as input, e.g. AB97_hh.met is for AB. Terminating");
   quit()
 }
 
@@ -46,23 +46,22 @@ Obs_date_time <- as.vector(Obs_date_time)
 # combine the multiple files of hourly with one header
 listFiles <- list.files(pattern=paste(siteCode, ".*\\.met$", sep=""), recursive=TRUE)
 if (length(listFiles)>1){
-  listFilesData <- do.call("rbind", lapply(paste(site_name,"/",listFiles, sep=""), read.csv, header = TRUE, skip_second))
-}
-else{
-  listFilesData <- read.csv(listFiles, header=TRUE, skip_second)
+  listFilesData <- do.call("rbind", lapply(listFiles, read.table, header = TRUE, skip = 1)) 
+} else {
+  listFilesData <- read.table(listFiles, header=TRUE, skip = 1)
 }
 
-site_filename <- paste(siteCode, ".csv", sep="")
-write.csv(listFilesData, file=site_filename)site
+site_filename <- paste(siteCode, "-", start_year,"-", end_year, ".csv", sep="")
+write.table(listFilesData, file=site_filename, sep=",")
 
 # Read FLUXNET file
-nc = read.csv(site_filename, header=TRUE, sep=",")
-attach(nc)
+nc = read.csv(site_filename, header=TRUE)
+#attach(nc)
 
-Variable_names <- names(nc)
-Variable_unit <- nc[1,]
+Variable_names <- MeteHalfhVar$Variable
+# Variable_unit <- nc[1,]
 # Convert data.frame columns from factors to characters
-Variable_units <- data.frame(lapply(Variable_unit, as.character), stringsAsFactors=FALSE) 
+#Variable_units <- data.frame(lapply(Variable_unit, as.character), stringsAsFactors=FALSE) 
 Variable_length <- length(nc[,1])
 
 # Create NetCDF file
@@ -95,28 +94,28 @@ var.put.nc(netcdf.from.fluxnet, "time", as.numeric(as.character(Obs_date_time)),
 for (V in 3:length(Variable_names)){
     
   #define dimensions
-  var.def.nc(netcdf.from.fluxnet, Variable_names[V], "NC_DOUBLE", c("lat","lon","time"))
+  var.def.nc(netcdf.from.fluxnet, levels(droplevels(Variable_names[V])), "NC_DOUBLE", c("lat","lon","time"))
   
   #define long name of variables
-  varDesc <- levels(droplevels(MeteHalfhVar[3][siteCodeInfo[1]==Variable_names[V]]))
+  varDesc <- levels(droplevels(MeteHalfhVar$Description[MeteHalfhVar$Variable==levels(droplevels(Variable_names[V]))]))
   varDesc[is.na(varDesc)] <- as.character("--")
-  att.put.nc(netcdf.from.fluxnet, Variable_names[V], "long_name", "NC_CHAR", varDesc)
+  att.put.nc(netcdf.from.fluxnet, levels(droplevels(Variable_names[V])), "long_name", "NC_CHAR", varDesc)
   
   #define unit of variables
-  varUnit <- levels(droplevels(MeteHalfhVar[2][siteCodeInfo[1]==Variable_names[V]]))
+  varUnit <- levels(droplevels(MeteHalfhVar$Units[MeteHalfhVar$Variable==levels(droplevels(Variable_names[V]))]))
   varUnit[is.na(varUnit)] <- as.character("--")
-  att.put.nc(netcdf.from.fluxnet, Variable_names[V], "units", "NC_CHAR", varUnit)
+  att.put.nc(netcdf.from.fluxnet, levels(droplevels(Variable_names[V])), "units", "NC_CHAR", varUnit)
     
   # define missing value
-  att.put.nc(netcdf.from.fluxnet, Variable_names[V], "missing_value", "NC_DOUBLE", -9999.)
+  att.put.nc(netcdf.from.fluxnet, levels(droplevels(Variable_names[V])), "missing_value", "NC_DOUBLE", -9999.)
     
   # Write data out to NetCDF file
-  var.put.nc(netcdf.from.fluxnet, Variable_names[V], as.numeric(as.character(nc[,V][2:Variable_length])), start=c(1,1,1), count=c(1,1,Variable_length-1))
+  var.put.nc(netcdf.from.fluxnet, levels(droplevels(Variable_names[V])), as.numeric(as.character(nc[,V][1:Variable_length])), start=c(1,1,1), count=c(1,1,Variable_length))
     
 }
 
 # Global attribution
-att.put.nc(netcdf.from.fluxnet, "NC_GLOBAL", "title", "NC_CHAR", "Data from FLUXNET")
+att.put.nc(netcdf.from.fluxnet, "NC_GLOBAL", "title", "NC_CHAR", "Data from FLUXNET gap_filled_marconi data")
 att.put.nc(netcdf.from.fluxnet, "NC_GLOBAL", "author", "NC_CHAR", "Lihui Luo email:luolh@lzb.ac.cn")
 
 # close the netcdf file
