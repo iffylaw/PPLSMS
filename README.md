@@ -8,4 +8,4 @@ offers model-data fusion technologies, evaluation and visualization for land sur
 The Pre-processing and Post-processing of Land Surface Models using different scripting 
 languages, including R, NCL, NCO, CDO, SHELL, LSF, GraDS GrADS and so on.
 
-![alt tag](https://raw.github.com/iffylaw/PPLSMS/branch/Img/Figure1.emf)
+![alt tag](https://raw.github.com/iffylaw/PPLSMS/blob/master/Img/Figure1.png)
