@@ -1,0 +1,26 @@
+September 5, 2008
+-----------------
+
+The first version (V001) of the Level 2 (L2) files for the LBA Tapajos
+KM83 Logged Forest site (BR-Sa3) near Santarem, Brazil were posted.
+These L2 files cover the period 2000 to 2002 and were derived from
+original files furnished by Mike Goulden via a website at the University
+of California - Irvine.  Version 1 of the Level 3 and 4 (L3 and L4) files
+were also posted on this same date, however, these files are derived from
+files provided to Dario Papale by Humberto da Rocha in Brazil.  These L3
+and L4 files cover the period 2000 to 2003.  Care should be exercised
+by users since the L2, L3, and L4 files came from different sources.
+
+
+September 12, 2012
+------------------
+
+The second version (V002) of the L2 files for the Br-Sa3 site were
+posted and cover the period 2000 to 2004.  These latest L2 files are
+provided in the AmeriFlux network convention (i.e., standard variable
+names and units) consistent with L2 files for other AmeriFlux sites.
+These files were provided by Scott Miller through the FLUXNET data
+activity at Oak Ridge National Laboratory.  Details on the processing
+by CDIAC to produce these V002 L2 files are provided at
+
+ftp://cdiac.ornl.gov/pub/ameriflux/data/Level2/Sites_ByName/LBA_Tapajos_KM83_Logged_Forest/with_gaps/report_LBA_Tapajos_KM83_Logged_Forest.html
