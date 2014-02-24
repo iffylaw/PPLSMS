@@ -1,4 +1,9 @@
 #!/bin/bash
+# Date: 24/02/2012
+# Written by Lihui Luo 
+# E-mail: luolh@lzb.ac.cn
+# Conver the output file of WRF model to the Forcing data set of Land Surface Models (Input file)
+
 echo "requires the year of data as input"
 
 # set the year of process 
