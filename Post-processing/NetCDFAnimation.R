@@ -79,3 +79,4 @@ saveGIF({
 
 # close the netcdf file
 close.nc(nc)
+dev.off()

@@ -1,0 +1,253 @@
+Network,Country,Id,Name,Latitude,Longitude,IGBP,Climate,Add. Network
+AmeriFlux,Brazil,BR-Sa3,Santarem-Km83-Logged Forest,-3.01803,-54.9714,EBF,Am,Unknown
+AmeriFlux,Canada,CA-NS1,UCI-1850 burn site,55.8792,-98.4839,ENF,Dfc,Unknown
+AmeriFlux,Canada,CA-NS2,UCI-1930 burn site,55.9058,-98.5247,ENF,Dfc,Unknown
+AmeriFlux,Canada,CA-NS3,UCI-1964 burn site,55.9117,-98.3822,ENF,Dfc,Unknown
+AmeriFlux,Canada,CA-NS4,UCI-1964 burn site wet,55.9117,-98.3822,ENF,Dfc,Unknown
+AmeriFlux,Canada,CA-NS5,UCI-1981 burn site,55.8631,-98.485,ENF,Dfc,Unknown
+AmeriFlux,Canada,CA-NS6,UCI-1989 burn site,55.9167,-98.9644,OSH,Dfc,Unknown
+AmeriFlux,Canada,CA-NS7,UCI-1998 burn site,56.6358,-99.9483,OSH,Dfc,Unknown
+AmeriFlux,USA,US-ARb,OK - ARM Southern Great Plains burn site- Lamont,35.5497,-98.0402,GRA,Cfa,Unknown
+AmeriFlux,USA,US-ARc,OK - ARM Southern Great Plains control site- Lamont,35.54649,-98.04,GRA,Cfa,Unknown
+AmeriFlux,USA,US-ARM,OK - ARM Southern Great Plains site- Lamont,36.6058,-97.4888,CRO,Cfa,Unknown
+AmeriFlux,USA,US-Atq,AK - Atqasuk,70.4696,-157.409,WET,ET,Unknown
+AmeriFlux,USA,US-Aud,AZ - Audubon Research Ranch,31.5907,-110.51,GRA,BSk,Unknown
+AmeriFlux,USA,US-Bar,NH - Bartlett Experimental Forest,44.0646,-71.28808,DBF,Dfb,Unknown
+AmeriFlux,USA,US-Bkg,SD - Brookings,44.3453,-96.8362,GRA,Dfa,Unknown
+AmeriFlux,USA,US-Blo,CA - Blodgett Forest,38.8952,-120.6328,ENF,Csa,Unknown
+AmeriFlux,USA,US-Bo1,IL - Bondville,40.0062,-88.2904,CRO,Dfa,Unknown
+AmeriFlux,USA,US-Bo2,IL - Bondville (companion site),40.009,-88.29,CRO,Dfa,Unknown
+AmeriFlux,USA,US-Brw,AK - Barrow,71.3225,-156.6259,WET,ET,Unknown
+AmeriFlux,USA,US-CaV,WV - Canaan Valley,39.0633,-79.4208,GRA,Cfb,Unknown
+AmeriFlux,USA,US-Dk1,NC - Duke Forest-open field,35.9712,-79.0934,GRA,Cfa,Unknown
+AmeriFlux,USA,US-Dk2,NC - Duke Forest-hardwoods,35.9736,-79.1004,DBF,Cfa,Unknown
+AmeriFlux,USA,US-Dk3,NC - Duke Forest - loblolly pine,35.9782,-79.0942,ENF,Cfa,Unknown
+AmeriFlux,USA,US-Fmf,AZ - Flagstaff - Managed Forest,35.1426,-111.7273,ENF,Csb,Unknown
+AmeriFlux,USA,US-FPe,MT - Fort Peck,48.3077,-105.1019,GRA,BSk,Unknown
+AmeriFlux,USA,US-FR2,TX - Freeman Ranch- Mesquite Juniper,29.9495,-97.9962,WSA,Cfa,Unknown
+AmeriFlux,USA,US-Fuf,AZ - Flagstaff - Unmanaged Forest,35.089,-111.762,ENF,Csb,Unknown
+AmeriFlux,USA,US-Fwf,AZ - Flagstaff - Wildfire,35.4454,-111.7718,GRA,Csb,Unknown
+AmeriFlux,USA,US-Goo,MS - Goodwin Creek,34.2547,-89.8735,GRA,Cfa,Unknown
+AmeriFlux,USA,US-Ha1,MA - Harvard Forest EMS Tower (HFR1),42.5378,-72.1715,DBF,Dfb,Unknown
+AmeriFlux,USA,US-Ha2,MA - Harvard Forest Hemlock Site,42.5393,-72.1779,ENF,Dfb,Unknown
+AmeriFlux,USA,US-Ho1,ME - Howland Forest (main tower),45.2041,-68.7402,ENF,Dfb,Unknown
+AmeriFlux,USA,US-Ho2,ME - Howland Forest (west tower),45.2091,-68.747,ENF,Dfb,Unknown
+AmeriFlux,USA,US-IB1,IL - Fermi National Accelerator Laboratory- Batavia (Agricultural site),41.8593,-88.2227,CRO,Dfa,Unknown
+AmeriFlux,USA,US-IB2,IL - Fermi National Accelerator Laboratory- Batavia (Prairie site),41.8406,-88.241,GRA,Dfa,Unknown
+AmeriFlux,USA,US-Ivo,AK - Ivotuk,68.4865,-155.75,WET,ET,Unknown
+AmeriFlux,USA,US-KS1,FL - Kennedy Space Center (slash pine),28.4583,-80.6709,ENF,Cfa,Unknown
+AmeriFlux,USA,US-KS2,FL - Kennedy Space Center (scrub oak),28.6086,-80.6715,CSH,Cfa,Unknown
+AmeriFlux,USA,US-Los,WI - Lost Creek,46.0827,-89.9792,CSH,Dfb,Unknown
+AmeriFlux,USA,US-LPH,MA - Little Prospect Hill,42.5419,-72.185,DBF,Dfb,Unknown
+AmeriFlux,USA,US-Me1,OR - Metolius - Eyerly burn,44.5794,-121.5,ENF,Csb,Unknown
+AmeriFlux,USA,US-Me2,OR - Metolius-intermediate aged ponderosa pine,44.4523,-121.5574,ENF,Csb,Unknown
+AmeriFlux,USA,US-Me3,OR - Metolius-second young aged pine,44.3154,-121.6078,ENF,Csb,Unknown
+AmeriFlux,USA,US-Me4,OR - Metolius-old aged ponderosa pine,44.4992,-121.6224,ENF,Csb,Unknown
+AmeriFlux,USA,US-MMS,IN - Morgan Monroe State Forest,39.3231,-86.4131,DBF,Cfa,Unknown
+AmeriFlux,USA,US-MOz,MO - Missouri Ozark Site,38.7441,-92.2,DBF,Cfa,Unknown
+AmeriFlux,USA,US-NC1,NC - NC_Clearcut,35.8115,-76.7115,OSH,Cfa,Unknown
+AmeriFlux,USA,US-NC2,NC - NC_Loblolly Plantation,35.8031,-76.6679,ENF,Cfa,Unknown
+AmeriFlux,USA,US-Ne1,NE - Mead - irrigated continuous maize site,41.1651,-96.4766,CRO,Dfa,Unknown
+AmeriFlux,USA,US-Ne2,NE - Mead - irrigated maize-soybean rotation site,41.1649,-96.4701,CRO,Dfa,Unknown
+AmeriFlux,USA,US-Ne3,NE - Mead - rainfed maize-soybean rotation site,41.1797,-96.4397,CRO,Dfa,Unknown
+AmeriFlux,USA,US-NR1,CO - Niwot Ridge Forest (LTER NWT1),40.0329,-105.546,ENF,Dfc,Unknown
+AmeriFlux,USA,US-Oho,OH - Oak Openings,41.5545,-83.8438,DBF,Dfa,Unknown
+AmeriFlux,USA,US-PFa,WI - Park Falls/WLEF,45.9459,-90.2723,MF,Dfb,Unknown
+AmeriFlux,USA,US-SO2,CA - Sky Oaks- Old Stand,33.3739,-116.6229,CSH,Csa,Unknown
+AmeriFlux,USA,US-SO3,CA - Sky Oaks- Young Stand,33.3772,-116.6227,CSH,Csa,Unknown
+AmeriFlux,USA,US-SO4,CA - Sky Oaks- New Stand,33.3844,-116.6403,CSH,Csa,Unknown
+AmeriFlux,USA,US-SP1,FL - Slashpine-Austin Cary- 65yrs nat regen,29.7381,-82.2188,ENF,Cfa,Unknown
+AmeriFlux,USA,US-SP2,"FL - Slashpine-Mize-clearcut-3yr,regen",29.7648,-82.2448,ENF,Cfa,Unknown
+AmeriFlux,USA,US-SP3,FL - Slashpine-Donaldson-mid-rot- 12yrs,29.7548,-82.1633,ENF,Cfa,Unknown
+AmeriFlux,USA,US-SP4,FL - Slashpine-Rayonier-mid-rot- 12yrs,29.8028,-82.2031,ENF,Cfa,Unknown
+AmeriFlux,USA,US-SRM,AZ - Santa Rita Mesquite,31.8214,-110.866,WSA,BSk,Unknown
+AmeriFlux,USA,US-Syv,MI - Sylvania Wilderness Area,46.242,-89.3477,MF,Dfb,Unknown
+AmeriFlux,USA,US-Ton,CA - Tonzi Ranch,38.4316,-120.966,WSA,Csa,Unknown
+AmeriFlux,USA,US-UMB,MI - Univ. of Mich. Biological Station,45.5598,-84.7138,DBF,Dfb,Unknown
+AmeriFlux,USA,US-Var,CA - Vaira Ranch- Ione,38.4133,-120.9507,GRA,Csa,Unknown
+AmeriFlux,USA,US-WBW,TN - Walker Branch Watershed,35.9588,-84.2874,DBF,Cfa,Unknown
+AmeriFlux,USA,US-WCr,WI - Willow Creek,45.8059,-90.0799,DBF,Dfb,Unknown
+AmeriFlux,USA,US-Wi0,WI - Young red pine (YRP),46.6188,-91.0814,ENF,Dfb,Unknown
+AmeriFlux,USA,US-Wi1,WI - Intermediate hardwood (IHW),46.7305,-91.2329,DBF,Dfb,Unknown
+AmeriFlux,USA,US-Wi2,WI - Intermediate red pine (IRP),46.6869,-91.1528,ENF,Dfb,Unknown
+AmeriFlux,USA,US-Wi4,WI - Mature red pine (MRP),46.7393,-91.1663,ENF,Dfb,Unknown
+AmeriFlux,USA,US-Wi5,WI - Mixed young jack pine (MYJP),46.6531,-91.0858,ENF,Dfb,Unknown
+AmeriFlux,USA,US-Wi6,WI - Pine barrens #1 (PB1),46.6249,-91.2982,OSH,Dfb,Unknown
+AmeriFlux,USA,US-Wi7,WI - Red pine clearcut (RPCC),46.6491,-91.0693,OSH,Dfb,Unknown
+AmeriFlux,USA,US-Wi8,WI - Young hardwood clearcut (YHW),46.7223,-91.2524,DBF,Dfb,Unknown
+AmeriFlux,USA,US-Wi9,WI - Young Jack pine (YJP),46.6188,-91.0814,ENF,Dfb,Unknown
+AmeriFlux,USA,US-Wkg,AZ - Walnut Gulch Kendall Grasslands,31.7365,-109.942,GRA,BSk,Unknown
+AmeriFlux,USA,US-Wrc,WA - Wind River Crane Site,45.8205,-121.952,ENF,Csb,Unknown
+AsiaFlux,China,CN-Xfs,Xilinhot Inner Mongolia fenced typical steppe (TSX),44.13417,116.3286, TBD,BSk,Unknown
+AsiaFlux,China,CN-Xi1,Xilinhot fenced steppe (X06),43.54583,116.6778,GRA,Dwb,Unknown
+AsiaFlux,China,CN-Xi2,Xilinhot grassland site (X03),43.5544,116.671,GRA,Dwb,Unknown
+AsiaFlux,Japan,JP-Mas,"Mase paddy flux site, Tsukuba, Japan (MSE)",36.05397,140.0269,CRO,Cfa,Unknown
+AsiaFlux,Japan,JP-Tak,Takayama,36.1462,137.423,DBF,Dfb,Unknown
+AsiaFlux,Japan,JP-Tef,Teshio Experimental Forest (TSE),45.05634,142.1062,MF,Dfb,Unknown
+AsiaFlux,Japan,JP-Tom,Tomakomai National Forest,42.7395,141.5149,MF,Dfb,Unknown
+CarboAfrica,Republic of Congo,CG-Tch,Tchizalamou,-4.28917,11.6564,OSH,Aw,Unknown
+CarboEurope IP,Belgium,BE-Bra,Brasschaat (De Inslag Forest),51.3092,4.52056,MF,Cfb,Unknown
+CarboEurope IP,Belgium,BE-Jal,Jalhay,50.5639,6.07333,MF,Cfb,Unknown
+CarboEurope IP,Belgium,BE-Lon,Lonzee,50.5522,4.74494,CRO,Cfb,Unknown
+CarboEurope IP,Belgium,BE-Vie,Vielsalm,50.3055,5.99683,MF,Cfb,Unknown
+CarboEurope IP,Czech Republic,CZ-BK1,Bily Kriz- Beskidy Mountains,49.5026,18.5384,ENF,Dfb,Unknown
+CarboEurope IP,Czech Republic,CZ-BK2,Bily Kriz- grassland,49.4953,18.5447,GRA,Dfb,Unknown
+CarboEurope IP,Czech Republic,CZ-wet,CZECHWET,49.025,14.772,WET,Cfb,Unknown
+CarboEurope IP,Denmark,DK-Fou,Foulum,56.4842,9.58722,CRO,Cfb,Unknown
+CarboEurope IP,Denmark,DK-Lva,Lille Valby (Rimi),55.6833,12.0833,GRA,Cfb,Unknown
+CarboEurope IP,Denmark,DK-Ris,Risbyholm,55.5303,12.0972,CRO,Cfb,Unknown
+CarboEurope IP,Denmark,DK-Sor,Soroe- LilleBogeskov,55.4869,11.6458,DBF,Cfb,Unknown
+CarboEurope IP,Finland,FI-Hyy,Hyytiala,61.8474,24.2948,ENF,Dfc,Unknown
+CarboEurope IP,Finland,FI-Kaa,Kaamanen wetland,69.1407,27.295,WET,Dfc,Unknown
+CarboEurope IP,Finland,FI-Sod,Sodankyla,67.3619,26.6378,ENF,Dfc,Unknown
+CarboEurope IP,France,FR-Aur,Aurade,43.5494,1.10778,CRO,Cfb,Unknown
+CarboEurope IP,France,FR-Fon,Fontainebleau,48.4763,2.78015,DBF,Cfb,Unknown
+CarboEurope IP,France,FR-Gri,Grignon  (after 6/5/2005),48.844,1.95243,CRO,Cfb,Unknown
+CarboEurope IP,France,FR-Hes,Hesse Forest- Sarrebourg,48.6742,7.06462,DBF,Cfb,Unknown
+CarboEurope IP,France,FR-Lam,Lamasquere,43.4933,1.23722,CRO,Cfb,Unknown
+CarboEurope IP,France,FR-LBr,Le Bray (after 6/28/1998),44.7171,-0.7693,ENF,Cfb,Unknown
+CarboEurope IP,France,FR-Lq1,Laqueuille,45.6441,2.73703,GRA,Cfb,Unknown
+CarboEurope IP,France,FR-Lq2,Laqueuille extensive,45.6392,2.73703,GRA,Cfb,Unknown
+CarboEurope IP,France,FR-Pue,Puechabon,43.7414,3.59583,EBF,Csa,Unknown
+CarboEurope IP,Germany,DE-Bay,Bayreuth-Waldstein/WeidenBrunnen,50.1419,11.8669,ENF,Cfb,Unknown
+CarboEurope IP,Germany,DE-Geb,Gebesee,51.1001,10.9143,CRO,Cfb,Unknown
+CarboEurope IP,Germany,DE-Gri,Grillenburg- grass station,50.9495,13.5125,GRA,Cfb,Unknown
+CarboEurope IP,Germany,DE-Hai,Hainich,51.0793,10.452,DBF,Cfb,Unknown
+CarboEurope IP,Germany,DE-Kli,Klingenberg - cropland,50.8929,13.5225,CRO,Cfb,Unknown
+CarboEurope IP,Germany,DE-Meh,Mehrstedt 1,51.2753,10.6555,GRA,Cfb,Unknown
+CarboEurope IP,Germany,DE-Tha,Anchor Station Tharandt - old spruce,50.9636,13.5669,ENF,Cfb,Unknown
+CarboEurope IP,Germany,DE-Wet,Wetzstein,50.4535,11.4575,ENF,Cfb,Unknown
+CarboEurope IP,Hungary,HU-Bug,Bugacpuszta,46.6911,19.6013,GRA,Cfb,Unknown
+CarboEurope IP,Hungary,HU-Mat,Matra,47.8469,19.726,GRA,Cfb,Unknown
+CarboEurope IP,Iceland,IS-Gun,Gunnarsholt,63.8333,-20.2167,DBF,Cfc,Unknown
+CarboEurope IP,Ireland,IE-Ca1,Carlow1,52.8588,-6.91814,CRO,Cfb,Unknown
+CarboEurope IP,Ireland,IE-Dri,Dripsey,51.9867,-8.75181,GRA,Cfb,Unknown
+CarboEurope IP,Israel,IL-Yat,Yatir,31.345,35.0515,ENF,BSh,Unknown
+CarboEurope IP,Italy,IT-Amp,Amplero,41.9041,13.6052,GRA,Cfa,Carboitaly
+CarboEurope IP,Italy,IT-BCi,Borgo Cioffi,40.5238,14.9574,CRO,Csa,Carboitaly
+CarboEurope IP,Italy,IT-Be2,Beano 2,46.0031,13.0257,GRA,Cfb,Carboitaly
+CarboEurope IP,Italy,IT-Bon,Bonis,39.4778,16.5347,ENF,Csa,Carboitaly
+CarboEurope IP,Italy,IT-Cas,Castellaro,45.06285,8.668539,CRO,Cfa,Carboitaly
+CarboEurope IP,Italy,IT-Col,Collelongo- Selva Piana,41.8494,13.5881,DBF,Cfa,Carboitaly
+CarboEurope IP,Italy,IT-Cpz,Castelporziano,41.7052,12.3761,EBF,Csa,Carboitaly
+CarboEurope IP,Italy,IT-Lav,Lavarone (after 3/2002),45.9553,11.2812,ENF,Cfb,Carboitaly
+CarboEurope IP,Italy,IT-Lec,Lecceto,43.3046,11.2706,EBF,Cfa,Carboitaly
+CarboEurope IP,Italy,IT-LMa,La Mandria,45.5813,7.15463,GRA,Cfb,Carboitaly
+CarboEurope IP,Italy,IT-Mal,Malga Arpaco,46.1167,11.7028,GRA,Cfb,Carboitaly
+CarboEurope IP,Italy,IT-MBo,Monte Bondone,46.0156,11.0467,GRA,Cfb,Carboitaly
+CarboEurope IP,Italy,IT-Noe,Sardinia/Arca di No¨¨,40.606,8.151,CSH,Csa,Unknown
+CarboEurope IP,Italy,IT-Non,Nonantola,44.6898,11.0887,DBF,Cfa,Unknown
+CarboEurope IP,Italy,IT-Pia,Island of Pianosa,42.5839,10.0784,OSH,Csa,Unknown
+CarboEurope IP,Italy,IT-PT1,Zerbolo-Parco Ticino- Canarazzo,45.2009,9.06104,DBF,Cfa,Unknown
+CarboEurope IP,Italy,IT-Ren,Renon/Ritten (Bolzano),46.5878,11.4347,ENF,Dfb,Carboitaly
+CarboEurope IP,Italy,IT-Ro1,Roccarespampani 1,42.4081,11.93,DBF,Csa,Carboitaly
+CarboEurope IP,Italy,IT-Ro2,Roccarespampani 2,42.3903,11.9209,DBF,Csa,Carboitaly
+CarboEurope IP,Italy,IT-SRo,San Rossore,43.72786,10.28444,ENF,Csa,Carboitaly
+CarboEurope IP,Netherlands,NL-Ca1,Cabauw,51.971,4.927,GRA,Cfb,Unknown
+CarboEurope IP,Netherlands,NL-Haa,Haastrecht,52.0031,4.8055,GRA,Cfb,Unknown
+CarboEurope IP,Netherlands,NL-Hor,Horstermeer,52.0289,5.0675,GRA,Cfb,Unknown
+CarboEurope IP,Netherlands,NL-Lan,Langerak,51.9536,4.9029,CRO,Cfb,Unknown
+CarboEurope IP,Netherlands,NL-Loo,Loobos,52.1679,5.74396,ENF,Cfb,Unknown
+CarboEurope IP,Netherlands,NL-Lut,Lutjewad,53.3989,6.356,CRO,Cfb,Unknown
+CarboEurope IP,Netherlands,NL-Mol,Molenweg,51.65,4.639,CRO,Cfb,Unknown
+CarboEurope IP,Poland,PL-wet,Polwet,52.7622,16.3094,WET,Cfb,Unknown
+CarboEurope IP,Portugal,PT-Esp,Espirra,38.6394,-8.6018,EBF,Csa,Unknown
+CarboEurope IP,Portugal,PT-Mi1,Mitra (Evora),38.5407,-8.0004,EBF,Csa,Unknown
+CarboEurope IP,Portugal,PT-Mi2,Mitra IV Tojal,38.4765,-8.02455,GRA,Csa,Unknown
+CarboEurope IP,Slovak Republic,SK-Tat,Tatra,49.1208,20.1635,ENF,Dbf,Unknown
+CarboEurope IP,Spain,ES-ES1,El Saler,39.346,-0.31881,ENF,Csa,Unknown
+CarboEurope IP,Spain,ES-ES2,El Saler-Sueca,39.2755,-0.31522,CRO,Csa,Unknown
+CarboEurope IP,Spain,ES-LJu,Llano de los Juanes,36.9282,-2.75047,OSH,Csa,Unknown
+CarboEurope IP,Spain,ES-LMa,Las Majadas del Tietar,39.9415,-5.77336,SAV,Csa,Unknown
+CarboEurope IP,Spain,ES-VDA,Vall d'Alinya,42.1522,1.4485,GRA,Cfb,Unknown
+CarboEurope IP,Sweden,SE-Abi,Abisko,68.36239,18.79475,DBF,ET,Unknown
+CarboEurope IP,Sweden,SE-Deg,Degero,64.1833,19.55,WET,Dfc,Unknown
+CarboEurope IP,Sweden,SE-Faj,Fajemyr (NECC),56.2655,13.5535,WET,Cfb,Unknown
+CarboEurope IP,Sweden,SE-Fla,Flakaliden,64.1128,19.4569,ENF,Dfc,Unknown
+CarboEurope IP,Sweden,SE-Nor,Norunda,60.0865,17.4795,ENF,Dfb,Unknown
+CarboEurope IP,Sweden,SE-Sk1,Skyttorp1 young,60.125,17.9181,ENF,Dfb,Unknown
+CarboEurope IP,Sweden,SE-Sk2,Skyttorp,60.12967,17.84006,ENF,Dfb,Unknown
+CarboEurope IP,Sweden,SE-St1,Stordalen  Forest- Mountain Birch,68.3667,19.04969,DBF,ET,Unknown
+CarboEurope IP,Switzerland,CH-Oe1,Oensingen1 grass,47.2856,7.73214,GRA,Cfb,Unknown
+CarboEurope IP,Switzerland,CH-Oe2,Oensingen2 crop,47.2863,7.73433,CRO,Cfb,Unknown
+CarboEurope IP,UK,UK-AMo,Auchencorth Moss- Scotland,55.7917,-3.23889,WET,Cfb,Unknown
+CarboEurope IP,UK,UK-EBu,Easter Bush- Scotland,55.866,-3.20578,GRA,Cfb,Unknown
+CarboEurope IP,UK,UK-ESa,East Saltoun,55.90694,-2.85861,CRO,Cfb,Unknown
+CarboEurope IP,UK,UK-Gri,Griffin- Aberfeldy-Scotland,56.60722,-3.79806,ENF,Cfc,Unknown
+CarboEurope IP,UK,UK-Ham,Hampshire,51.15353,-0.8583,DBF,Cfb,Unknown
+CarboEurope IP,UK,UK-Her,Hertfordshire,51.7838,-0.47608,CRO,Cfb,Unknown
+CarboEurope IP,UK,UK-PL3,Pang/ Lambourne (forest),51.45,-1.26667,DBF,Cfb,Unknown
+CarboEurope IP,UK,UK-Tad,Tadham Moor,51.2071,-2.82864,GRA,Cfb,Unknown
+ChinaFLUX,China,CN-Cha,Changbaishan,42.4025,128.096,MF,Dwb,Unknown
+ChinaFLUX,China,CN-HaM,Haibei Alpine Tibet site,37.37,101.18,GRA,ET,Unknown
+Fluxnet-Canada,Canada,CA-Ca1,British Columbia- Campbell River - Mature Forest Site,49.8672,-125.334,ENF,Cfb,Unknown
+Fluxnet-Canada,Canada,CA-Ca2,British Columbia- Campbell River - Clearcut Site,49.8705,-125.291,ENF,Cfb,Unknown
+Fluxnet-Canada,Canada,CA-Ca3,British Columbia- Campbell River - Young Plantation Site,49.5346,-124.9,ENF,Cfb,Unknown
+Fluxnet-Canada,Canada,CA-Gro,Ontario- Groundhog River-Mat. Boreal Mixed Wood,48.2167,-82.1556,MF,Dfb,Unknown
+Fluxnet-Canada,Canada,CA-Let,Lethbridge,49.7093,-112.94,GRA,Dfb,Unknown
+Fluxnet-Canada,Canada,CA-Man,BOREAS NSA - Old Black Spruce,55.8796,-98.4808,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-Mer,Eastern Peatland- Mer Bleue,45.4094,-75.5186,WET,Dfb,Unknown
+Fluxnet-Canada,Canada,CA-Oas,Sask.- SSA Old Aspen,53.6289,-106.198,DBF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-Obs,Sask.- SSA Old Black Spruce,53.9872,-105.118,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-Ojp,Sask.- SSA Old Jack Pine,53.9163,-104.692,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-Qcu,Quebec Boreal Cutover Site,49.2671,-74.0365,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-Qfo,Quebec Mature Boreal Forest Site,49.6925,-74.3421,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-SF1,Sask.- Fire 1977,54.485,-105.818,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-SF2,Sask.- Fire 1989,54.2539,-105.878,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-SF3,Sask.- Fire 1998,54.0916,-106.005,OSH,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-SJ1,Sask.- 1994 Harv. Jack Pine,53.908,-104.656,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-SJ2,Sask.- 2002 Harvested Jack Pine,53.945,-104.649,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-SJ3,Sask.- SSA 1975 Harv. Yng Jack Pine,53.8758,-104.645,ENF,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-TP1,Ontario- Turkey Point Seedling White Pine,42.6609,-80.5595,ENF,Dfb,Unknown
+Fluxnet-Canada,Canada,CA-TP2,Ontario- Turkey Point Young White Pine,42.7744,-80.4588,ENF,Dfb,Unknown
+Fluxnet-Canada,Canada,CA-TP3,Ontario- Turkey Point Middle-aged White Pine,42.7068,-80.3483,ENF,Dfb,Unknown
+Fluxnet-Canada,Canada,CA-TP4,Ontario- Turkey Point Mature White Pine,42.7098,-80.3574,ENF,Dfb,Unknown
+Fluxnet-Canada,Canada,CA-WP1,Western Peatland- LaBiche-Black Spruce/Larch Fen,54.9538,-112.467,WET,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-WP2,Poor Fen,55.5375,-112.334,WET,Dfc,Unknown
+Fluxnet-Canada,Canada,CA-WP3,Rich Fen,54.47,-113.32,WET,Dfc,Unknown
+KoFlux,Korea,KR-Hnm,Haenam (HFK),34.55,126.57,CRO,Cfa,Unknown
+LBA,Brazil,BR-Ban,Ecotone Bananal Island,-9.82442,-50.1591,EBF,Aw,Unknown
+LBA,Brazil,BR-Cax,Caxiuana Forest-Almeirim,-1.71972,-51.459,EBF,Af,Unknown
+LBA,Brazil,BR-Ji1,Rond.- Faz. Nossa Senhora-i Parana-pasture,-10.7618,-62.3572,GRA,Aw,Unknown
+LBA,Brazil,BR-Ji2,Rond.- Rebio Jaru Ji Parana- Tower A,-10.0832,-61.9309,EBF,Aw,Unknown
+LBA,Brazil,BR-Ma2,Manaus - ZF2 K34,-2.6091,-60.2093,EBF,Af,Unknown
+LBA,Brazil,BR-Sa1,Santarem-Km67-Primary Forest,-2.85667,-54.9589,EBF,Am,AmeriFlux
+OzFlux,Australia,AU-Fog,Fogg Dam,-12.5425,131.307,WET,Aw,Unknown
+OzFlux,Australia,AU-How,Howard Springs,-12.4943,131.152,WSA,Aw,Unknown
+OzFlux,Australia,AU-Tum,Tumbarumba,-35.6557,148.152,EBF,Cfb,Unknown
+OzFlux,Australia,AU-Wac,Wallaby Creek,-37.429,145.187,EBF,Cfb,Unknown
+TCOS,Russia,RU-Che,Cherskii,68.6147,161.339,MF,Dfc,Unknown
+TCOS,Russia,RU-Cok,Chokurdakh,70.6167,147.883,OSH,Dfc,Unknown
+TCOS,Russia,RU-Fyo,Fyodorovskoye wet spruce stand,56.46167,32.92389,ENF,Dfb,Unknown
+TCOS,Russia,RU-Ha1,Ubs Nur- Hakasija-grassland,54.7253,90.0022,GRA,Dfc,Unknown
+TCOS,Russia,RU-Ha2,Ubs Nur- Hakasija-recovering grassland,54.7731,89.9567,GRA,Dfc,Unknown
+TCOS,Russia,RU-Ha3,Ubs Nur-Hakasija- Site 3,54.70455,89.07785,GRA,Dfc,Unknown
+TCOS,Russia,RU-Zot,Zotino,60.8008,89.3508,ENF,Dfc,Unknown
+Unaffiliated,Austria,AT-Neu,Neustift/Stubai Valley,47.11667,11.3175,GRA,Cfb,Unknown
+Unaffiliated,Botswana,BW-Ghg,Ghanzi Grass Site,-21.51,21.74,SAV,BSh,Unknown
+Unaffiliated,Botswana,BW-Ghm,Ghanzi Mixed Site,-21.2,21.75,WSA,BSh,Unknown
+Unaffiliated,Botswana,BW-Ma1,Maun- Mopane Woodland,-19.9155,23.5605,WSA,BSh,Unknown
+Unaffiliated,Brazil,BR-Sa2,Santarem-Km77-Pasture,-3.0119,-54.5365,CRO,Am,Unknown
+Unaffiliated,Brazil,BR-Sp1,Sao Paulo Cerrado,-21.6195,-47.6499,WSA,Aw,Unknown
+Unaffiliated,China,CN-Bed,Beijing Daxing,39.5306,116.252,EBF,Dwa,Unknown
+Unaffiliated,China,CN-Du1,Duolun_cropland (D02),42.0456,116.671,CRO,Dwb,Unknown
+Unaffiliated,China,CN-Du2,Duolun_grassland (D01),42.0467,116.284,GRA,Dwb,Unknown
+Unaffiliated,China,CN-Ku1,Kubuqi_populus forest (K04),40.5383,108.694,EBF,BSk,Unknown
+Unaffiliated,China,CN-Ku2,Kubuqi_shrubland (K05),40.3808,108.549,OSH,BSk,Unknown
+Unaffiliated,Finland,FI-Sii,Siikaneva fen,61.833,24.193,GRA,Dfc,Unknown
+Unaffiliated,French Guyana,GF-Guy,Guyaflux,5.2777,-52.9288,EBF,Af,Unknown
+Unaffiliated,Germany,DE-Har,Hartheim,47.9344,7.601,ENF,Cfb,Unknown
+Unaffiliated,Indonesia,ID-Pag,Palangkaraya (PDF),2.345,114.036,EBF,Af,Unknown
+Unaffiliated,Italy,IT-Vig,Vigevano,45.31667,8.85,DBF,Cfa,Unknown
+Unaffiliated,Korea,KR-Kw1,Gwangneung Coniferous Forest (GCK),37.7486,127.163,MF,Dwa,Unknown
+Unaffiliated,South Africa,ZA-Kru,Skukuza- Kruger National Park,-25.0197,31.4969,SAV,Cwa,Unknown
+Unaffiliated,Taiwan,TW-Tar,TARI (TWTARI),24.0312,120.688,CRO,Cfa,Unknown
+Unaffiliated,USA,US-Bn1,"AK - Bonanza Creek, 1920 Burn site near Delta Junction",63.9198,-145.378,ENF,Dsc,Unknown
+Unaffiliated,USA,US-Bn2,"AK - Bonanza Creek, 1987 Burn site near Delta Junction",63.9198,-145.378,DBF,Dsc,Unknown
+Unaffiliated,USA,US-Bn3,"AK - Bonanza Creek, 1999 Burn site near Delta Junction",63.9227,-145.744,OSH,Dsc,Unknown
+Unaffiliated,Vanuatu,VU-Coc,CocoFlux,-15.4427,167.192,EBF,Af,Unknown
+USCCC,China,CN-Anh,Anhui Huaining,33,117,DBF,Cwa,Unknown
+USCCC,China,CN-Do1,Dongtan 1 (CM1),31.5167,121.961,WET,Cfa,"AsiaFlux,ChinaFLUX"
+USCCC,China,CN-Do2,Dongtan 2 (CM2),31.5847,121.903,WET,Cfa,"AsiaFlux,ChinaFLUX"
+USCCC,China,CN-Do3,Dongtan 3 (CM3),31.5169,121.972,WET,Cfa,"AsiaFlux,ChinaFLUX"
+USCCC,China,CN-Hny,Hunan Yueyang,29.31,112.51,DBF,Cfa,Unknown
