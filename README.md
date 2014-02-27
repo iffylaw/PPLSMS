@@ -51,7 +51,7 @@ License
 GNU GENERAL PUBLIC LICENSE
 
 
-**Cold and Arid Regions Environmental and Engineering
-Research Institute, Chinese Academy of Sciences**
+> Cold and Arid Regions Environmental and Engineering Research Institute, 
+> Chinese Academy of Sciences
 
 [CAREERI, CAS]:http://www.careeri.cas.cn
