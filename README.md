@@ -29,12 +29,13 @@ ScreenShots
 Version
 ----
 
-1.0
+0.1
 
 Installation
 --------------
 
 ```sh
+dos2unix *.R||sh||ncl
 chmod 755 *.R||sh||ncl
 ./*.R Arg1 Arg2 Arg3
 ./*.sh Arg1 Arg2 Arg3
