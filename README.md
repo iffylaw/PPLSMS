@@ -12,8 +12,6 @@ In order to process different data sets and comprehensive evaluate Land Surface 
 
 ![alt tag](https://raw.github.com/iffylaw/PPLSMS/master/Img/Figure1.png "The flow diagram of PPLSMS")
 
-![alt tag](https://raw.github.com/iffylaw/PPLSMS/master/Output/LH_Animation.gif "The gif animation")
-
   - LSMs: ORCHIDEE, JULES, CoLM, CLM, Noah LSM and JSBACH... 
   - SHELL script to integrated and control CDO (Climate Data Operators)(Schulzweida and Kornblueh, 2006), NCO (NetCDF Operators)(Zender, 2008), GrADS (Grid Analysis and Display System)(Doty and Kinter III, 1995), R(Gentleman et al., 1997), Platform LSF, and NCL(NCAR Command Language)(UCAR/NCAR/CISL/VETS, 2013)
   - also SHELL script can configure the model and interconnect different programming functions of the other scripting languages. 
@@ -27,6 +25,8 @@ ScreenShots
 > Some figures of simulations of LSMS
 
 ![alt tag](https://raw.github.com/iffylaw/PPLSMS/master/Img/china-4plot-2004-01.gif "China FSH Jan 2004")
+
+![alt tag](https://raw.github.com/iffylaw/PPLSMS/master/Output/LH_Animation.gif "The gif animation")
 
 Version
 ----
