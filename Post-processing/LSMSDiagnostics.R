@@ -1,8 +1,6 @@
 #!/usr/bin/env Rscript
 # Date: 25/02/2014
 # This script generates some simple diagnostics and plot for LSMS fluxnet simulations
-# written by Lihui Luo and Soenke Zaehle
-# E-mail: luolh@lzb.ac.cn
 # contains:
 # LSMS_FLUXNET_GRAPHIC - function for ordinary fluxnet plots
 # LSMS_FLUXNET_GRAPHIC_FAPAR - function for satellite comparison plots
