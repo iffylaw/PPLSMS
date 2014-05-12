@@ -1,7 +1,5 @@
 #!/usr/bin/env Rscript
 # Date: 09/02/2014
-# Written by Tong He (http://weibo.com/u/1635976784) and Lihui Luo
-# E-mail: luolh@lzb.ac.cn
 # This script generates some animation for NetCDF data files
 
 rm(list = ls())     # clear objects  
