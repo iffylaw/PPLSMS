@@ -1,7 +1,6 @@
 #!/usr/bin/env Rscript
 # Date 30/05/2011
 # This script generates some simple diagnostics and plot for different version simulations
-# written by Lihui Luo and Soenke Zaehle
 # contains:
 # earlier_current_GRAPHIC - function for ordinary current plots
 # earlier_current_GRAPHIC_ERR - function for error bars 
