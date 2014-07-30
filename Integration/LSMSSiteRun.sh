@@ -1,6 +1,6 @@
 #!/bin/bash
 # ------------------------------------------------------------------------------------
-# Run script for JSBACH at FLUXNET sites
+# Run script for lsm at FLUXNET sites
 # This script calls LSMSRunArray.sh for all sites given in the file "site_list"
 # This script assumes that the SITE_LIST and LSMSRunArray.sh file exist
 #  in the same directory
@@ -32,5 +32,5 @@ fi
 
 NSITE=$(wc -l site_list.txt | cut -c1-8 | awk '{print $1}')
 # array starts at 2 because first line in site_list.txt is a header
-bsub -J jsb_s[2-${NSITE}]%${NPROC} -e run_jsb_site.%I.e -o run_jsb_site.%I.o < ./LSMSRunArray.sh
-bsub -w "ended(jsb_s[2-${NSITE}])" -J cleanup -e run_jsb_cleanup.e -o run_jsb_cleanup.o < ./LSMSRunCLeanup.sh
+bsub -J lsm_s[2-${NSITE}]%${NPROC} -e run_lsm_site.%I.e -o run_lsm_site.%I.o < ./LSMSRunArray.sh
+bsub -w "ended(lsm_s[2-${NSITE}])" -J cleanup -e run_lsm_cleanup.e -o run_lsm_cleanup.o < ./LSMSRunCLeanup.sh
