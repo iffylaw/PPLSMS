@@ -42,7 +42,7 @@ for var in $VAR_list ; do
       SITE=$(head -${i} site_list.txt | tail -1 | awk '{print $1}')
       if [ $i -eq 2 ] ; then
         h1=$(grep RMSE ${SITE}/Output/${SITE}.${exp_id}.${ftype}.stats.${freq}.txt)
-        h2=$(grep JSBACH ${SITE}/Output/${SITE}.${exp_id}.${ftype}.summary.txt)
+        h2=$(grep lsm ${SITE}/Output/${SITE}.${exp_id}.${ftype}.summary.txt)
         echo \"SITE\" $h1 $h2 > ${outfile}
       fi 
       d=$(grep ${var} ${SITE}/Output/${SITE}.${exp_id}.${ftype}.stats.${freq}.txt)
