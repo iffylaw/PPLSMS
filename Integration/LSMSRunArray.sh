@@ -1,6 +1,6 @@
 #!/bin/bash
 #------------------------------------------------------------------------------------
-# RUNSCRIPT TO RUN JSBACH for FLUXNET sites
+# RUNSCRIPT TO RUN lsm for FLUXNET sites
 #------------------------------------------------------------------------------------
 #BSUB -q io 
 #BSUB -a mpich2pgi
@@ -59,7 +59,7 @@ TIMEOFFSET=$(head -$LSB_JOBINDEX site_list.txt | tail -1 | awk '{print $5}')
 out_dir=${local_path}/${SITE}
 restart_dir=${local_path}/${SITE}
 username=$(whoami)
-scratch_dir=/scratch/${username}/TMP_JSBACH
+scratch_dir=/scratch/${username}/TMP_lsm
 
 
 #------------------------------------------------------------------------------------
@@ -126,9 +126,9 @@ esac
     
 #-- copy input data and executables to woring directory
 cp ${forcing_dir}/${ftype}/${SITE}.${STARTYEAR}-${ENDYEAR}.forcing.${ftype}.nc forcing.nc
-cp ${forcing_dir}/surface/${SITE}.${NTILES}_tiles.surface.nc jsbach.nc
-cp ${code_dir}/util/running/adjunct_files/jsbach/lctlib_nlct21.def lctlib.def
-cp ${code_dir}/${compiler}/bin/jsbach_${codeversion}.x jsbach.x
+cp ${forcing_dir}/surface/${SITE}.${NTILES}_tiles.surface.nc lsm.nc
+cp ${code_dir}/util/running/adjunct_files/lsm/lctlib_nlct21.def lctlib.def
+cp ${code_dir}/${compiler}/bin/lsm_${codeversion}.x lsm.x
 cp ${code_dir}/${compiler}/bin/cbalance_${codeversion}.x cbalance.x
 if [ $postprocess_flag -eq 1 ] ; then
  cp ${code_dir}/contrib/site_scripts/generate_FLUXNET_diagnostics.R .
@@ -141,20 +141,20 @@ fi
 if [ $restart -eq 0 ] ; then
 
 #-- create basic namelist
-setup_jsbach_namelist ${forcing_frequency} ${NTILES} ${LOCALTIME} ${TIMEOFFSET} GRIB ${debug} \
+setup_lsm_namelist ${forcing_frequency} ${NTILES} ${LOCALTIME} ${TIMEOFFSET} GRIB ${debug} \
                       ${dynveg} ${read_fpc} ${withnitrogen}
 
 #-- create namelist for initial run 
 read_cpool=FALSE
 read_npool=FALSE
 restart=FALSE
-update_jsbach_namelist ${code_dir} ${exp_id} ${startdate} ${enddate} ${nsdt} \
+update_lsm_namelist ${code_dir} ${exp_id} ${startdate} ${enddate} ${nsdt} \
    ${writefreq_spin} ${restart} ${read_cpool} ${read_npool} ${read_ndepo}
 set_stream_elements ${code_dir} LAI_yDayMean NPP_yDayMean topSoilTemp_yDayMean \
    alpha_yDayMean
 
 #------------------------------------------------------------------------------------
-# 3.1 run JSBACH to accumulate phenological triggers and equilibriate water cycle 
+# 3.1 run lsm to accumulate phenological triggers and equilibriate water cycle 
 #     this provides the input for C cycle equilibration 
 #------------------------------------------------------------------------------------
 # 3.1.1 work out how many cycles are required to obtain NYEARINIT years
@@ -165,7 +165,7 @@ i=1
 while [ $i -le $NINIT ] ; do
 
   #-- run the model
-  time ${mrun} ${PWD}/jsbach.x
+  time ${mrun} ${PWD}/lsm.x
   #-- modifiy date stamp of restart file 
   let setdate=${STARTYEAR}-1
   setdate=${setdate}1231
@@ -175,7 +175,7 @@ while [ $i -le $NINIT ] ; do
     #-- in second and higher runs use restart file and update namelist 
     restart=TRUE
     startdate=00000000
-    update_jsbach_namelist ${code_dir} ${exp_id} ${startdate} ${enddate} ${nsdt} \
+    update_lsm_namelist ${code_dir} ${exp_id} ${startdate} ${enddate} ${nsdt} \
       ${writefreq_spin} ${restart} ${read_cpool} ${read_npool} ${read_ndepo}
     set_stream_elements ${code_dir} LAI_yDayMean NPP_yDayMean topSoilTemp_yDayMean \
       alpha_yDayMean
@@ -191,7 +191,7 @@ for i in `ls \${exp_id}*_veg`; do
  $cdo -s selname,var165,var166,var168,var169 $i VEG.TMP
  $cdo -s -f nc -r -chvar,var165,LAI_yDayMean -chvar,var166,NPP_yDayMean \
                   -chvar,var168,topSoilTemp_yDayMean -chvar,var169,alpha_yDayMean \
-                  VEG.TMP jsb_cb_${j:0:6}.jsbach_yDay_Mean.nc
+                  VEG.TMP jsb_cb_${j:0:6}.lsm_yDay_Mean.nc
  rm VEG.TMP 
 done
 
@@ -214,11 +214,11 @@ else
 fi
 
 #------------------------------------------------------------------------------------
-# 4. run JSBACH for actual experiment 
+# 4. run lsm for actual experiment 
 #------------------------------------------------------------------------------------
 
 #-- create namelist
-setup_jsbach_namelist ${forcing_frequency} ${NTILES} ${LOCALTIME} ${TIMEOFFSET} \
+setup_lsm_namelist ${forcing_frequency} ${NTILES} ${LOCALTIME} ${TIMEOFFSET} \
                       ${out_filetype} ${debug} ${dynveg} ${read_fpc} ${withnitrogen}
 read_cpool=TRUE
 if [[ ${withnitrogen} = 'TRUE' ]] ; then 
@@ -228,7 +228,7 @@ else
 fi  
 restart=TRUE
 startdate=00000000
-update_jsbach_namelist ${code_dir} ${exp_id} ${startdate} ${enddate} ${nsdt} \
+update_lsm_namelist ${code_dir} ${exp_id} ${startdate} ${enddate} ${nsdt} \
    ${writefreq_out} ${restart} ${read_cpool} ${read_npool} ${read_ndepo}
 set_stream_elements ${code_dir} sensible_heat_flx net_radiation surface_temperature \
    latent_heat_flx transpiration evapotranspiration canopy_cond_limited canopy_conductance \
@@ -238,7 +238,7 @@ set_stream_elements ${code_dir} sensible_heat_flx net_radiation surface_temperat
    NPP_act_yDayMean air_temp precip_rain precip_snow spec_humidity frac_PAR_diffuse \
    rad_sw_down_pot wind_speed zchl_acc cdrag_acc
  
-time ${mrun} ${PWD}/jsbach.x
+time ${mrun} ${PWD}/lsm.x
 
 #------------------------------------------------------------------------------------
 # 5. postprocessing 
@@ -253,19 +253,19 @@ else
 
   #aggregate in time
   if [ $writefreq_out -eq 1800 ] ; then
-    mv jsbach.all.nc jsbach.halfhourly.nc
-    cp jsbach.halfhourly.nc ${out_dir}/Output/${SITE}.${exp_id}.${ftype}.jsbach.halfhourly.nc
-    $cdo -s -daymean jsbach.halfhourly.nc jsbach.daily.nc
+    mv lsm.all.nc lsm.halfhourly.nc
+    cp lsm.halfhourly.nc ${out_dir}/Output/${SITE}.${exp_id}.${ftype}.lsm.halfhourly.nc
+    $cdo -s -daymean lsm.halfhourly.nc lsm.daily.nc
   fi
   if [ $writefreq_out -eq 86400 ] ; then
-    mv jsbach.all.nc jsbach.daily.nc
+    mv lsm.all.nc lsm.daily.nc
   fi
-  $cdo -s -monmean jsbach.daily.nc jsbach.monthly.nc
-  $cdo -s -yearmean jsbach.daily.nc jsbach.annual.nc
+  $cdo -s -monmean lsm.daily.nc lsm.monthly.nc
+  $cdo -s -yearmean lsm.daily.nc lsm.annual.nc
 
-  cp jsbach.daily.nc ${out_dir}/Output/${SITE}.${exp_id}.${ftype}.jsbach.daily.nc
-  cp jsbach.monthly.nc ${out_dir}/Output/${SITE}.${exp_id}.${ftype}.jsbach.monthly.nc
-  cp jsbach.annual.nc ${out_dir}/Output/${SITE}.${exp_id}.${ftype}.jsbach.annual.nc
+  cp lsm.daily.nc ${out_dir}/Output/${SITE}.${exp_id}.${ftype}.lsm.daily.nc
+  cp lsm.monthly.nc ${out_dir}/Output/${SITE}.${exp_id}.${ftype}.lsm.monthly.nc
+  cp lsm.annual.nc ${out_dir}/Output/${SITE}.${exp_id}.${ftype}.lsm.annual.nc
 #-----------------------------------------------------------------------------------
 # 5.1 statistics and visualisation  
 #-----------------------------------------------------------------------------------
