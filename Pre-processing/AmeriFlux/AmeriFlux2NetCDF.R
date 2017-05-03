@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# Date: 09/02/2014
+# Date: 09/02/2017
 # Written by Lihui Luo 
 # E-mail: luolh@lzb.ac.cn
 # AmeriFlux website http://ameriflux.lbl.gov/Pages/default.aspx
