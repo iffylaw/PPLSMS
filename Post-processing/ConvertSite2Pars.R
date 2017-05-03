@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 # Date 06/07/2011
 # This script generates some txt file from statistics file 
-# written by Lihui Luo
+# written by Lihui Luo luolh@lzb.ac.cn
 # contains:
 # ConvertSite2Pars - function for convert each site's stats into each parameter's stats 
 
