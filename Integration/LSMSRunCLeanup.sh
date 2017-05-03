@@ -1,3 +1,4 @@
+# Lihui Luo
 #!/bin/bash
 # name of experiment
 exp_id=$(head -1 general_settings.txt | tail -1 | awk '{print $1}')
