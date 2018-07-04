@@ -50,9 +50,15 @@ Pre-processing and post-processing of LSMs are crucial components of the scienti
 
 License
 ----
-
+GNU-GPL 3.0 
 
 > Cold and Arid Regions Environmental and Engineering Research Institute, 
 > Chinese Academy of Sciences
 
-[CAREERI, CAS]:http://www.careeri.cas.cn
+Please contact to Lihui Luo (E-mail: luolh@lzb.ac.cn)
+
+![Alt text](https://github.com/iffylaw/PIC/blob/master/Figure/WeChat.jpg)
+
+updated: 07/04/2018
+
+[CAREERI, CAS]:http://www.nieer.cas.cn
